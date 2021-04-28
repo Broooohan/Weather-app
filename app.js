@@ -60,6 +60,6 @@ app.get("/forecast" , (req , res)=>{
     res.send("WILL UPDATE SOON");
 })
 
-app.listen(3000 , ()=>{
+app.listen(process.env.PORT || 3000 , ()=>{
     console.log('Port running on localhost: 3000');
 })
