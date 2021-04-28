@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+    }
+    html {
+      background-attachment: fixed;
+      background-image: linear-gradient(
+        to bottom,
+        #000996,
+        #0036b3,
+        #0057cc,
+        #0077e2,
+        #0097f4
+      );
+    }
+    .cont1 {
+      /* border: 2px solid white; */
+      height: 18vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .city-name {
+      /* border: 2px solid white; */
+      width: 45vw;
+      height: 15vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .search-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      /* border: 2px solid white; */
+      width: 45vw;
+      height: 15vh;
+    }
+    form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 45vw;
+      min-height: 15vh;
+    }
+    #city {
+      font-size: 3rem;
+    }
+    #search {
+      color: black;
+      text-align: center;
+      border: none;
+      width: 15vw;
+      height: 30px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    #submit {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      height: 30px;
+      min-width: 60px;
+      border: none;
+      color: black;
+      border-left: 1px solid black;
+    }
+    ::placeholder {
+      text-align: center;
+    }
+    .cont2 {
+      /* border: 2px solid white; */
+      min-height: 40vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .symbol {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 45vw;
+      min-height: 40vh;
+      border-right: 2px solid white;
+    }
+    .climate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 45vw;
+      min-height: 40vh;
+      border-left: 2px solid white;
+      /* border: 2px solid white; */
+    }
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20vw;
+      height: 35vh;
+      /* border: 2px solid white; */
+    }
+    #sun-img {
+      height: 350px;
+      width: 350px;
+    }
+    .temp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 20vw;
+      height: 35vh;
+      /* border: 2px solid white; */
+    }
+    #celcius {
+      font-size: 3.8rem;
+    }
+    #sunny {
+      font-size: 2.5rem;
+    }
+    .up {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 40vw;
+      height: 19vh;
+      /* border: 2px solid white; */
+    }
+    .down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 40vw;
+      height: 19vh;
+      /* border: 2px solid white; */
+    }
+    .max-temp {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .wind-speed {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .pressure {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .min-temp {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .humidity {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .feels-like {
+      /* border: 2px solid white; */
+      width: 12vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .cont3 {
+      text-align: center;
+      width: 75vw;
+      margin: 20px auto;
+      padding: 5px;
+      border: 2px solid white;
+    }
+    #go {
+      background-color: blue;
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+    }
+    #go:hover {
+      cursor: pointer;
+    }
+    div > p:first-child {
+      font-size: 2.5rem;
+    }
+    footer{
+        padding: 5px 0px;
+        flex-direction: column;
+    }
+    footer div{
+        padding: 10px 0px;
+    }
+    @media screen and (max-width: 1274px) {
+      div > p:first-child {
+        font-size: 2rem;
+      }
+      #sun-img {
+        height: 250px;
+        width: 250px;
+      }
+      #celcius {
+        font-size: 3rem;
+      }
+    }
+    @media screen and (max-width: 1041px) {
+      div > p:first-child {
+        font-size: 1.5rem;
+      }
+      #sun-img {
+        height: 200px;
+        width: 200px;
+      }
+      #celcius {
+        font-size: 2rem;
+      }
+      #sunny {
+        font-size: 2rem;
+      }
+    }
+    @media screen and (max-width: 850px) {
+      .cont2 {
+        flex-direction: column;
+      }
+      .symbol {
+        width: 80vw;
+        border: none;
+        border: 2px solid white;
+      }
+      .img {
+        width: 39vw;
+      }
+      .temp {
+        width: 39vw;
+      }
+      .up {
+        width: 90vw;
+      }
+      .down {
+        width: 90vw;
+      }
+      .max-temp {
+        width: 30vw;
+      }
+      .wind-speed {
+        width: 30vw;
+      }
+      .pressure {
+        width: 30vw;
+      }
+      .min-temp {
+        width: 30vw;
+      }
+      .humidity {
+        width: 30vw;
+      }
+      .feels-like {
+        width: 30vw;
+      }
+      .climate {
+        width: 95vw;
+        border: none;
+        border: 2px solid white;
+      }
+      #city{
+          font-size: 1.5rem;
+      }
+    }
+    @media screen and (max-width: 500px) {
+        .cont1{
+            margin: 5px;
+            flex-direction: column-reverse;
+        }
+        .city-name {
+            height: 10vh;
+            width: 80vw;
+            border: 2px solid white;
+            
+    }
+    .cont2{
+        margin: 5px;
+    }
+    .search-bar {
+        height: 10vh;
+      width: 80vw;
+      border: 2px solid white;
+    }
+    #search{
+        width: 50vw;
+    }
+    .symbol{
+        margin: 5px;
+        flex-direction: column;
+    }
+    .temp{
+        width: 80vw;
+        height: 20vh;
+    }
+    .img{
+        height: 20vh;
+    }
+    .cont3{
+        font-size: 15px;
+    }
+    }
+    .cp{
+        padding: 20px;
+        text-align: center;
+    }
+  </style>
+  <body>
+    <div class="cont1">
+      <div class="city-name">
+        <h1 id="city"><%= cities%>, <%= countries%></h1>
+        <h3 id="date">Time</h3>
+      </div>
+      <div class="search-bar">
+        <form action="/" method="POST">
+          <input
+            type="text"
+            name="cname"
+            id="search"
+            autofocus
+            spellcheck="false"
+            placeholder="Enter City"
+            autocomplete="off"
+          />
+          <button type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="cont2">
+      <div class="symbol">
+        <div class="img">
+          <img src="<%= weatherimg %>" alt="Weather image" id="sun-img" />
+          <!-- <img src="http://openweathermap.org/img/wn/04d@2x.png" alt=""> -->
+        </div>
+        <div class="temp">
+          <h1 id="celcius"><%= cels %> ℃</h1>
+          <p id="sunny"><%= feels %></p>
+        </div>
+      </div>
+      <div class="climate">
+        <div class="up">
+          <div class="max-temp">
+            <p><%= high%> ℃</p>
+            <p>High</p>
+          </div>
+          <div class="wind-speed">
+            <p><%= wind%></p>
+            <p>Wind Speed</p>
+          </div>
+          <div class="pressure">
+            <p><%= pressure%></p>
+            <p>Pressure</p>
+          </div>
+        </div>
+        <div class="down">
+          <div class="min-temp">
+            <p><%= low%> ℃</p>
+            <p>Low</p>
+          </div>
+          <div class="humidity">
+            <p><%= humidity%></p>
+            <p>Humidity</p>
+          </div>
+          <div class="feels-like">
+            <p><%= like%></p>
+            <p>Feels Like</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cont3">
+      <h1>
+        Thankyou for visiting my website.<br />For upcoming weather data click
+        below
+      </h1>
+    </div>
+    <div class="btn">
+      <a href="/forecast"><button id="go">Let's Go</button></a>
+    </div>
+    <div class="cp">
+        MADE WITH LOVE 💗 FROM
+        <a href="https://broooohan.github.io/Rohan/" target="_blank">ROHAN</a> 😊
+      </div>
+  </body>
+  <script>
+    var d = new Date().toLocaleDateString();
+    document.getElementById("date").innerText = d;
+    </script>
+</html>
