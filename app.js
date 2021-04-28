@@ -51,7 +51,7 @@ app.post("/" , (req,res)=>{
                 cityimg = "http://openweathermap.org/img/wn/" + code + "@2x.png";
                 res.render("weather",{cities : cityname , countries: countryName , weatherimg: cityimg , cels: temp , feels: feeling , high:highf , wind:windf , pressure:pressuref , low:lowf , humidity : humidityf, like: likef});
             } else
-            res.render("weather",{cities: "Pls enter valid name"});
+            res.render("weather",{cities : "Pls enter valid city name" , countries: "" , weatherimg: cityimg , cels: "" , feels: "" , high: "" , wind: "", pressure: "" , low: "" , humidity : "", like: ""});
         })
     })
 })
